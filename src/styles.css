@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --color-ink: #14231f;
+  --color-muted: #5d6e68;
+  --color-paper: #f2f6f4;
+  --color-surface: #ffffff;
+  --color-line: #d8e3de;
+  --color-green: #0b5d4b;
+  --color-deep: #073d31;
+  --color-foam: #f4faf7;
+  --color-amber: #f08a00;
+  --color-amber-ink: #1d1200;
+  --radius-card: 0.75rem;
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    min-height: 100%;
+  }
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
